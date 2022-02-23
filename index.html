@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Cambria, Cochin;
+            text-align: center;
+        }
+        
+        label {
+            text-decoration: none;
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            font-size: medium;
+            font-weight: bold;
+            color: rgb(148, 36, 36);
+            text-align: left;
+        }
+        
+        #myInput,
+        #myInput1 {
+            width: 60%;
+            border-radius: 3px;
+        }
+        
+        .btn-rounded {
+            width: 100px;
+        }
+        
+        input,
+        button {
+            width: 10%;
+            margin: 4px;
+            box-sizing: border-box;
+            background-color: rgb(93, 246, 252);
+            border: none;
+            color: rgb(19, 1, 1);
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            text-shadow: none;
+            display: flexbox;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        
+        .container-1 {
+            position: absolute;
+            /* width: 40%; */
+            height: 90%;
+            left: 30%;
+            text-align: center;
+            color: rgb(97, 44, 44);
+            margin-top: 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(204, 147, 147);
+            font-size: large;
+        }
+        
+        form {
+            background-color: rgb(242, 248, 250);
+            margin: -4px 15px 5px;
+            padding: 10%;
+        }
+        
+        @media screen and (max-width:768px) {
+            .container-1 {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    </style>
+    <script>
+        function getval(val) {
+            document.getElementById("rbtn").value = val;
+            document.getElementById("resul").src = " ";
+        }
+
+
+        // var n = -1;
+
+        // function createBlankIframe() {
+        //     n++;
+        //     var iframe = document.createElement('IFRAME');
+        //     iframe.id = iframe.name = 'iframe' + n;
+        //     iframe.src = 'about:blank';
+        //     document.body.appendChild(iframe);
+        // }
+    </script>
+</head>
+
+<body>
+    <div class="container-1">
+        <h1> CALCULATOR</h1>
+        <br>
+        <form method="post" action="/" target="output">
+            <label for="fn">Enter Number1 : </label>
+            <input id="myInput" type="number" name="num1" placeholder="first number" required>
+            <br>
+            <label for="fn">Enter Number2 :</label>
+            <input id="myInput1" type="number" name="num2" placeholder="second number" required>
+            <br>
+
+            <input type="button" value="+" name="bt" class="btn" onclick="getval(this.value)">
+            <input type="button" value="-" name="bt" class="btn" onclick="getval(this.value)">
+            <input type="button" value="*" name="bt" class="btn" onclick="getval(this.value)">
+            <input type="button" value="/" name="bt" class="btn" onclick="getval(this.value)">
+            <input type="button" value="%" name="bt" class="btn" onclick="getval(this.value)">
+            <input type="reset" value="C" name="bt" class="btn" onclick="getval()">
+            <button type="submit" name="res" class="equal" id="rbtn">=</button>
+
+            <br>
+
+        </form>
+        <!-- <label for="res"><u>OUTPUT</label> -->
+
+        <iframe src="" id="resul" frameborder="0" name="output" width="100%" height="40"></iframe>
+
+
+    </div>
+
+
+</body>
+
+</html>
